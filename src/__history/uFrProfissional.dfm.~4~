@@ -1,0 +1,21 @@
+inherited frmProfissional: TfrmProfissional
+  Caption = 'frmProfissional'
+  FormStyle = fsNormal
+  PixelsPerInch = 96
+  TextHeight = 13
+  inherited qryManute: TFDQuery
+    SQL.Strings = (
+      'SELECT * FROM PROFISSIONAL WHERE CODIGO =:PFICODIGO')
+    ParamData = <
+      item
+        Name = 'PFICODIGO'
+        DataType = ftInteger
+        ParamType = ptInput
+        Value = Null
+      end>
+  end
+  inherited qryConsul: TFDQuery
+    SQL.Strings = (
+      'SELECT * FROM PROFISSIONAL')
+  end
+end

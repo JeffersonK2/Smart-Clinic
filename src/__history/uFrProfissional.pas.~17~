@@ -1,0 +1,61 @@
+unit uFrProfissional;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, ufrPadrao, Data.DB, cxGraphics,
+  cxLookAndFeels, cxLookAndFeelPainters, Vcl.Menus, dxSkinsCore,
+  dxSkinsDefaultPainters, FireDAC.Stan.Intf, FireDAC.Stan.Option,
+  FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf,
+  FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.DataSet,
+  FireDAC.Comp.Client, System.Actions, Vcl.ActnList, cxButtons, Vcl.StdCtrls,
+  Vcl.Buttons, Vcl.ExtCtrls, Vcl.Grids, Vcl.DBGrids, Vcl.Mask, JvExStdCtrls,
+  JvCombobox, JvDBCombobox, Vcl.ComCtrls, Vcl.DBCtrls;
+
+type
+  TfrmProfissional = class(TfrmPadrao)
+    qryManutecodigo: TIntegerField;
+    qryManutenome: TWideStringField;
+    Label1: TLabel;
+    DBEdit1: TDBEdit;
+    Label2: TLabel;
+    DBEdit2: TDBEdit;
+    qryConsulcodigo: TIntegerField;
+    qryConsulnome: TWideStringField;
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure actSairExecute(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmProfissional: TfrmProfissional;
+
+implementation
+
+{$R *.dfm}
+
+uses uFrMain;
+
+procedure TfrmProfissional.actSairExecute(Sender: TObject);
+var
+TabSheet :TTabSheet;
+begin
+  inherited;
+  //TabSheet := frmMain.pgcPrincipal.ActivePage;
+  FreeAndNil(frmProfissional);
+  frmMain.pgcPrincipal.ActivePage.Free;
+  frmMain.pgcPrincipal.ActivePage.Destroy;
+  frmMain.pgcPrincipal.ActivePageIndex := 0;
+end;
+
+procedure TfrmProfissional.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+  inherited;
+  FreeAndNil(frmProfissional);
+end;
+
+end.

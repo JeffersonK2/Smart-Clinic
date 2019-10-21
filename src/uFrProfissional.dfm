@@ -1,0 +1,109 @@
+inherited frmProfissional: TfrmProfissional
+  Align = alClient
+  BorderIcons = []
+  BorderStyle = bsNone
+  Caption = 'frmProfissional'
+  ClientHeight = 400
+  ClientWidth = 700
+  FormStyle = fsNormal
+  PixelsPerInch = 96
+  TextHeight = 13
+  inherited pgcManute: TPageControl
+    Width = 700
+    Height = 367
+    inherited tshConsul: TTabSheet
+      inherited panConsul: TPanel
+        Width = 692
+      end
+      inherited grdConsul: TDBGrid
+        Width = 692
+        Height = 316
+      end
+    end
+    inherited tshManute: TTabSheet
+      inherited panManute: TPanel
+        Width = 692
+        Height = 357
+        object Label1: TLabel
+          Left = 88
+          Top = 16
+          Width = 31
+          Height = 13
+          Caption = 'codigo'
+          FocusControl = DBEdit1
+        end
+        object Label2: TLabel
+          Left = 88
+          Top = 64
+          Width = 26
+          Height = 13
+          Caption = 'nome'
+          FocusControl = DBEdit2
+        end
+        object DBEdit1: TDBEdit
+          Left = 88
+          Top = 32
+          Width = 134
+          Height = 21
+          DataField = 'codigo'
+          DataSource = dtsManute
+          TabOrder = 0
+        end
+        object DBEdit2: TDBEdit
+          Left = 88
+          Top = 80
+          Width = 500
+          Height = 21
+          DataField = 'nome'
+          DataSource = dtsManute
+          TabOrder = 1
+        end
+      end
+    end
+  end
+  inherited panBotoes: TPanel
+    Top = 367
+    Width = 700
+    inherited btnSair: TcxButton
+      Left = 624
+    end
+  end
+  inherited qryManute: TFDQuery
+    SQL.Strings = (
+      'SELECT * FROM PROFISSIONAL WHERE CODIGO =:PFICODIGO')
+    ParamData = <
+      item
+        Name = 'PFICODIGO'
+        DataType = ftInteger
+        ParamType = ptInput
+        Value = Null
+      end>
+    object qryManutecodigo: TIntegerField
+      FieldName = 'codigo'
+      Origin = 'codigo'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+    end
+    object qryManutenome: TWideStringField
+      FieldName = 'nome'
+      Origin = 'nome'
+      Size = 100
+    end
+  end
+  inherited qryConsul: TFDQuery
+    SQL.Strings = (
+      'SELECT * FROM PROFISSIONAL')
+    object qryConsulcodigo: TIntegerField
+      DisplayLabel = 'C'#243'digo'
+      FieldName = 'codigo'
+      Origin = 'codigo'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+    end
+    object qryConsulnome: TWideStringField
+      DisplayLabel = 'Nome'
+      DisplayWidth = 50
+      FieldName = 'nome'
+      Origin = 'nome'
+      Size = 100
+    end
+  end
+end
