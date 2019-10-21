@@ -2835,6 +2835,7 @@ object frmMain: TfrmMain
       ParentBackground = False
       ParentFont = False
       TabOrder = 0
+      OnClick = Panel12Click
       object Image15: TImage
         Left = 0
         Top = 0
@@ -3252,7 +3253,6 @@ object frmMain: TfrmMain
           2D30353A30309AE54DA40000000049454E44AE426082}
         Proportional = True
         ShowHint = True
-        OnClick = Image15Click
       end
     end
     object Panel13: TPanel

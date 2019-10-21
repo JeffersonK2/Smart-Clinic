@@ -76,7 +76,8 @@ type
   private
     { Private declarations }
     procedure SelecionaMenu(nMenu: Integer);
-    procedure NovaAba(formulario: TForm; pageControl: TPageControl;FCaption:String);
+    procedure NovaAba(formulario: TForm; FClasseFomulario: TFormClass;
+                           pageControl: TPageControl; FCaption:String);
   public
     { Public declarations }
   end;
@@ -88,7 +89,7 @@ implementation
 
 {$R *.dfm}
 
-uses uFrProfissional;
+uses uFrProfissional, uFrAgenda;
 
 
 
@@ -107,12 +108,11 @@ begin
   SelecionaMenu(0);
 end;
 
-procedure TfrmMain.NovaAba(formulario: TForm; pageControl: TPageControl;
-                           FClasseFomulario: TForm; FCaption:String);
+procedure TfrmMain.NovaAba(formulario: TForm; FClasseFomulario: TFormClass;
+                           pageControl: TPageControl; FCaption:String);
 var
    tabSheet : TTabSheet;
    index: Integer;
-   FForm: Tform;
 begin
   for index := 0 to pageControl.PageCount - 1 do
     with pageControl do
@@ -126,7 +126,6 @@ begin
      //Create a new tab sheet
    tabSheet             := TTabSheet.Create(pageControl) ;
    tabSheet.PageControl := pageControl;
-   FForm := formulario.ClassName;
    //create a form
    formulario             := FClasseFomulario.Create(tabSheet);
    formulario.Parent      := tabSheet;
@@ -142,7 +141,7 @@ end;
 
 procedure TfrmMain.Panel17Click(Sender: TObject);
 begin
-  NovaAba(frmProfissional,pgcPrincipal,'Profissional');
+  NovaAba(frmProfissional,TfrmProfissional,pgcPrincipal,'Profissional');
 end;
 
 
@@ -153,12 +152,7 @@ end;
 
 procedure TfrmMain.Panel2Click(Sender: TObject);
 begin
- {if Frmagendamento = nil then
-      Begin
-        Application.CreateForm(TFrmagendamento, Frmagendamento);
-      End;
-
-      Frmagendamento.show;  }
+  NovaAba(frmAgenda,TfrmAgenda,pgcPrincipal,'Agenda');
 end;
 
 procedure TfrmMain.Panel3Click(Sender: TObject);
@@ -193,7 +187,7 @@ end;
 
 procedure TfrmMain.Profissionais1Click(Sender: TObject);
 begin
-  NovaAba(frmProfissional,pgcPrincipal,'Profissional');
+//  NovaAba(frmProfissional,pgcPrincipal,'Profissional');
 end;
 
 procedure TfrmMain.pSairClick(Sender: TObject);

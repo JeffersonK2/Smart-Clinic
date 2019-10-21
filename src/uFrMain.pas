@@ -66,12 +66,12 @@ type
     procedure pSairClick(Sender: TObject);
     procedure Panel19Click(Sender: TObject);
     procedure Panel2Click(Sender: TObject);
-    procedure Image15Click(Sender: TObject);
     procedure Panel3Click(Sender: TObject);
     procedure Panel5Click(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure Panel17Click(Sender: TObject);
     procedure Profissionais1Click(Sender: TObject);
+    procedure Panel12Click(Sender: TObject);
 
   private
     { Private declarations }
@@ -99,11 +99,6 @@ begin
 end;
 
 procedure TfrmMain.FormShow(Sender: TObject);
-begin
-  SelecionaMenu(0);
-end;
-
-procedure TfrmMain.Image15Click(Sender: TObject);
 begin
   SelecionaMenu(0);
 end;
@@ -137,6 +132,11 @@ begin
 
    //activate the sheet
    pageControl.ActivePage := tabSheet;
+end;
+
+procedure TfrmMain.Panel12Click(Sender: TObject);
+begin
+  SelecionaMenu(0);
 end;
 
 procedure TfrmMain.Panel17Click(Sender: TObject);
