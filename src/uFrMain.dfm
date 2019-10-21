@@ -13712,8 +13712,7 @@ object frmMain: TfrmMain
     end
   end
   object MainMenu1: TMainMenu
-    Left = 16
-    Top = 8
+    Left = 120
     object Cadastro1: TMenuItem
       Caption = 'Cadastro'
       object Convnios1: TMenuItem
