@@ -1,0 +1,65 @@
+unit uFrAgenda;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, cxGraphics, cxLookAndFeels,
+  cxLookAndFeelPainters, Vcl.Menus, dxSkinsCore, dxSkinsDefaultPainters,
+  Vcl.StdCtrls, cxButtons, Vcl.ExtCtrls, System.Actions, Vcl.ActnList,
+  Vcl.Grids, Vcl.DBGrids, Vcl.Mask, JvExStdCtrls, JvCombobox, JvDBCombobox,
+  Vcl.ComCtrls;
+
+type
+  TfrmAgenda = class(TForm)
+    pgcManute: TPageControl;
+    tshConsul: TTabSheet;
+    panConsul: TPanel;
+    lblCampos: TLabel;
+    Label12: TLabel;
+    cbxPesqui: TJvDBComboBox;
+    edtCodBar: TEdit;
+    edtPesNum: TEdit;
+    edtPesDat: TMaskEdit;
+    edtPesTex: TEdit;
+    grdConsul: TDBGrid;
+    tshManute: TTabSheet;
+    panManute: TPanel;
+    panAgenda: TPanel;
+    panCalend: TPanel;
+    DBGrid1: TDBGrid;
+    actBotoes: TActionList;
+    actAdicio: TAction;
+    actEditar: TAction;
+    actSalvar: TAction;
+    actCancel: TAction;
+    actExclui: TAction;
+    actPesqui: TAction;
+    actCanPes: TAction;
+    actSair: TAction;
+    actConsul: TAction;
+    panBotoes: TPanel;
+    bvlAdicio: TBevel;
+    Bevel1: TBevel;
+    Bevel2: TBevel;
+    Bevel3: TBevel;
+    btnAdicio: TcxButton;
+    btnEditar: TcxButton;
+    btnSalvar: TcxButton;
+    btnCancel: TcxButton;
+    BtnExcluir: TcxButton;
+    btnSair: TcxButton;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmAgenda: TfrmAgenda;
+
+implementation
+
+{$R *.dfm}
+
+end.
