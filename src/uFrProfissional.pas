@@ -25,6 +25,8 @@ type
     qryConsulnome: TWideStringField;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure actSairExecute(Sender: TObject);
+    procedure FormDestroy(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -44,19 +46,55 @@ procedure TfrmProfissional.actSairExecute(Sender: TObject);
 var
 TabSheet :TTabSheet;
 begin
+   FreeAndNil(frmProfissional);
+   TabSheet := frmMain.pgcPrincipal.ActivePage;
+
+   if Assigned(TabSheet) then
+begin
+TabSheet.Parent := nil;
+TabSheet.PageControl := nil;
+
+
+FreeAndNil(TabSheet);
+end;
+
+
+  // frmMain.pgcPrincipal.ActivePage.Free;
   inherited;
   //TabSheet := frmMain.pgcPrincipal.ActivePage;
-  frmMain.pgcPrincipal.ActivePage.Free;
-  FreeAndNil(frmProfissional);
-
+  // frmMain.pgcPrincipal.ActivePage.PageControl.Pages[1].Destroy;
+ //  FreeAndNil(frmProfissional);
+  // frmMain.pgcPrincipal.ActivePage.Free;
   //frmMain.pgcPrincipal.ActivePage.Destroy;
   //frmMain.pgcPrincipal.ActivePageIndex := 0;
+end;
+
+procedure TfrmProfissional.Button1Click(Sender: TObject);
+var
+TabSheet :TTabSheet;
+begin
+
+  //TabSheet := frmMain.pgcPrincipal.ActivePage;
+  // frmMain.pgcPrincipal.ActivePage.PageControl.Pages[1].Destroy;
+   FreeAndNil(frmProfissional);
+   frmMain.pgcPrincipal.ActivePage.Free;
+  //frmMain.pgcPrincipal.ActivePage.Destroy;
+  //frmMain.pgcPrincipal.ActivePageIndex := 0;
+
 end;
 
 procedure TfrmProfissional.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
   inherited;
-  FreeAndNil(frmProfissional);
+
+//  Action := caFree
+//  FreeAndNil(frmProfissional);
+end;
+
+procedure TfrmProfissional.FormDestroy(Sender: TObject);
+begin
+  inherited;
+//frmProfissional := nil;
 end;
 
 end.

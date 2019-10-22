@@ -1,0 +1,133 @@
+inherited frmProfissional: TfrmProfissional
+  Align = alClient
+  BorderIcons = []
+  BorderStyle = bsNone
+  Caption = 'frmProfissional'
+  ClientHeight = 439
+  ClientWidth = 716
+  OnDestroy = FormDestroy
+  ExplicitWidth = 716
+  ExplicitHeight = 439
+  PixelsPerInch = 96
+  TextHeight = 13
+  inherited pgcManute: TPageControl
+    Width = 716
+    Height = 406
+    ExplicitWidth = 716
+    ExplicitHeight = 406
+    inherited tshConsul: TTabSheet
+      ExplicitWidth = 708
+      ExplicitHeight = 396
+      inherited panConsul: TPanel
+        Width = 708
+        ExplicitWidth = 708
+      end
+      inherited grdConsul: TDBGrid
+        Width = 708
+        Height = 355
+      end
+    end
+    inherited tshManute: TTabSheet
+      ExplicitWidth = 708
+      ExplicitHeight = 396
+      inherited panManute: TPanel
+        Width = 708
+        Height = 396
+        ExplicitWidth = 708
+        ExplicitHeight = 396
+        object Label1: TLabel
+          Left = 88
+          Top = 16
+          Width = 31
+          Height = 13
+          Caption = 'codigo'
+          FocusControl = DBEdit1
+        end
+        object Label2: TLabel
+          Left = 88
+          Top = 64
+          Width = 26
+          Height = 13
+          Caption = 'nome'
+          FocusControl = DBEdit2
+        end
+        object DBEdit1: TDBEdit
+          Left = 88
+          Top = 32
+          Width = 134
+          Height = 21
+          DataField = 'codigo'
+          DataSource = dtsManute
+          TabOrder = 0
+        end
+        object DBEdit2: TDBEdit
+          Left = 88
+          Top = 80
+          Width = 500
+          Height = 21
+          DataField = 'nome'
+          DataSource = dtsManute
+          TabOrder = 1
+        end
+      end
+    end
+  end
+  inherited panBotoes: TPanel
+    Top = 406
+    Width = 716
+    ExplicitTop = 406
+    ExplicitWidth = 716
+    inherited btnSair: TcxButton
+      Left = 640
+      SpeedButtonOptions.CanBeFocused = False
+      ExplicitLeft = 640
+    end
+    object Button1: TButton
+      Left = 497
+      Top = 2
+      Width = 75
+      Height = 25
+      Caption = 'Button1'
+      TabOrder = 6
+      OnClick = Button1Click
+    end
+  end
+  inherited qryManute: TFDQuery
+    SQL.Strings = (
+      'SELECT * FROM PROFISSIONAL WHERE CODIGO =:PFICODIGO')
+    ParamData = <
+      item
+        Name = 'PFICODIGO'
+        DataType = ftInteger
+        ParamType = ptInput
+        Value = Null
+      end>
+    object qryManutecodigo: TIntegerField
+      FieldName = 'codigo'
+      Origin = 'codigo'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+    end
+    object qryManutenome: TWideStringField
+      FieldName = 'nome'
+      Origin = 'nome'
+      Size = 100
+    end
+  end
+  inherited qryConsul: TFDQuery
+    SQL.Strings = (
+      'SELECT * FROM PROFISSIONAL')
+    object qryConsulcodigo: TIntegerField
+      DisplayLabel = 'C'#243'digo'
+      FieldName = 'codigo'
+      Origin = 'codigo'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+    end
+    object qryConsulnome: TWideStringField
+      DisplayLabel = 'Nome'
+      DisplayWidth = 50
+      FieldName = 'nome'
+      Origin = 'nome'
+      Size = 100
+    end
+  end
+end

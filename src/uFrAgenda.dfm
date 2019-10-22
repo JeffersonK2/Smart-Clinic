@@ -21,10 +21,6 @@ object frmAgenda: TfrmAgenda
     ActivePage = tshManute
     Align = alClient
     TabOrder = 0
-    ExplicitLeft = 8
-    ExplicitTop = 8
-    ExplicitWidth = 845
-    ExplicitHeight = 451
     object tshConsul: TTabSheet
       Caption = 'Consulta'
       TabVisible = False
@@ -130,8 +126,6 @@ object frmAgenda: TfrmAgenda
       Caption = 'Manuten'#231#227'o'
       ImageIndex = 1
       TabVisible = False
-      ExplicitWidth = 837
-      ExplicitHeight = 441
       object panManute: TPanel
         Left = 0
         Top = 0
@@ -142,8 +136,6 @@ object frmAgenda: TfrmAgenda
         Color = clMoneyGreen
         ParentBackground = False
         TabOrder = 0
-        ExplicitWidth = 837
-        ExplicitHeight = 441
         object panAgenda: TPanel
           Left = 1
           Top = 1
@@ -151,7 +143,6 @@ object frmAgenda: TfrmAgenda
           Height = 80
           Align = alTop
           TabOrder = 0
-          ExplicitWidth = 835
         end
         object panCalend: TPanel
           Left = 1
@@ -167,9 +158,6 @@ object frmAgenda: TfrmAgenda
             Height = 177
             Align = alTop
             TabOrder = 0
-            ExplicitLeft = 2
-            ExplicitTop = 9
-            ExplicitWidth = 238
             object pan01: TPanel
               Left = 0
               Top = 25
@@ -677,8 +665,6 @@ object frmAgenda: TfrmAgenda
             Height = 41
             Align = alTop
             TabOrder = 1
-            ExplicitLeft = -4
-            ExplicitTop = 225
             object ComboBox1: TComboBox
               Left = 10
               Top = 6
@@ -719,7 +705,6 @@ object frmAgenda: TfrmAgenda
             Height = 177
             Align = alTop
             TabOrder = 2
-            ExplicitTop = 162
             object Panel3: TPanel
               Left = 0
               Top = 25
@@ -1227,8 +1212,6 @@ object frmAgenda: TfrmAgenda
             Height = 41
             Align = alTop
             TabOrder = 3
-            ExplicitLeft = 2
-            ExplicitTop = 9
             object ComboBox2: TComboBox
               Left = 10
               Top = 6
@@ -1288,7 +1271,6 @@ object frmAgenda: TfrmAgenda
     Color = clMoneyGreen
     ParentBackground = False
     TabOrder = 1
-    ExplicitWidth = 845
     object bvlAdicio: TBevel
       Left = 376
       Top = 1
@@ -1557,7 +1539,16 @@ object frmAgenda: TfrmAgenda
         77E1F9FAAF711CAC2DAF78FAF43BA808553FCBB696803C003B810120E17F04EA
         E897CD81EC1FBEC66EBE2A51FCE50000000049454E44AE426082}
       TabOrder = 5
-      ExplicitLeft = 769
+      OnClick = btnSairClick
+    end
+    object Button1: TButton
+      Left = 664
+      Top = 8
+      Width = 75
+      Height = 25
+      Caption = 'Button1'
+      TabOrder = 6
+      OnClick = Button1Click
     end
   end
   object actBotoes: TActionList

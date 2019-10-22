@@ -3,27 +3,38 @@ inherited frmProfissional: TfrmProfissional
   BorderIcons = []
   BorderStyle = bsNone
   Caption = 'frmProfissional'
-  ClientHeight = 400
-  ClientWidth = 700
-  FormStyle = fsNormal
+  ClientHeight = 439
+  ClientWidth = 716
+  OnDestroy = FormDestroy
+  ExplicitWidth = 716
+  ExplicitHeight = 439
   PixelsPerInch = 96
   TextHeight = 13
   inherited pgcManute: TPageControl
-    Width = 700
-    Height = 367
+    Width = 716
+    Height = 406
+    ExplicitWidth = 716
+    ExplicitHeight = 406
     inherited tshConsul: TTabSheet
+      ExplicitWidth = 708
+      ExplicitHeight = 396
       inherited panConsul: TPanel
-        Width = 692
+        Width = 708
+        ExplicitWidth = 708
       end
       inherited grdConsul: TDBGrid
-        Width = 692
-        Height = 316
+        Width = 708
+        Height = 355
       end
     end
     inherited tshManute: TTabSheet
+      ExplicitWidth = 708
+      ExplicitHeight = 396
       inherited panManute: TPanel
-        Width = 692
-        Height = 357
+        Width = 708
+        Height = 396
+        ExplicitWidth = 708
+        ExplicitHeight = 396
         object Label1: TLabel
           Left = 88
           Top = 16
@@ -62,10 +73,14 @@ inherited frmProfissional: TfrmProfissional
     end
   end
   inherited panBotoes: TPanel
-    Top = 367
-    Width = 700
+    Top = 406
+    Width = 716
+    ExplicitTop = 406
+    ExplicitWidth = 716
     inherited btnSair: TcxButton
-      Left = 624
+      Left = 640
+      SpeedButtonOptions.CanBeFocused = False
+      ExplicitLeft = 640
     end
   end
   inherited qryManute: TFDQuery

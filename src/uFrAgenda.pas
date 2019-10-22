@@ -155,6 +155,9 @@ type
     Panel52: TPanel;
     ComboBox2: TComboBox;
     Edit1: TEdit;
+    Button1: TButton;
+    procedure btnSairClick(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -167,5 +170,35 @@ var
 implementation
 
 {$R *.dfm}
+
+uses uFrMain;
+
+procedure TfrmAgenda.btnSairClick(Sender: TObject);
+var
+TabSheet :TTabSheet;
+begin
+
+  //TabSheet := frmMain.pgcPrincipal.ActivePage;
+  // frmMain.pgcPrincipal.ActivePage.PageControl.Pages[1].Destroy;
+   FreeAndNil(frmAgenda);
+   frmMain.pgcPrincipal.ActivePage.Free;
+  //frmMain.pgcPrincipal.ActivePage.Destroy;
+  //frmMain.pgcPrincipal.ActivePageIndex := 0;
+
+end;
+
+procedure TfrmAgenda.Button1Click(Sender: TObject);
+var
+TabSheet :TTabSheet;
+begin
+
+  //TabSheet := frmMain.pgcPrincipal.ActivePage;
+  // frmMain.pgcPrincipal.ActivePage.PageControl.Pages[1].Destroy;
+   FreeAndNil(frmAgenda);
+   frmMain.pgcPrincipal.ActivePage.Free;
+  //frmMain.pgcPrincipal.ActivePage.Destroy;
+  //frmMain.pgcPrincipal.ActivePageIndex := 0;
+
+end;
 
 end.

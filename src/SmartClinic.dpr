@@ -16,6 +16,5 @@ begin
   Application.MainFormOnTaskbar := True;
   Application.CreateForm(TdmServer, dmServer);
   Application.CreateForm(TfrmMain, frmMain);
-  Application.CreateForm(TfrmAgenda, frmAgenda);
   Application.Run;
 end.

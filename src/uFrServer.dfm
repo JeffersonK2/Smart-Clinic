@@ -8,7 +8,7 @@ object dmServer: TdmServer
       'User_Name=postgres'
       'Password=ids0207'
       'Server=localhost'
-      'Port=5433'
+      'Port=5432'
       'DriverID=PG')
     FetchOptions.AssignedValues = [evMode, evCache]
     FetchOptions.Mode = fmAll
@@ -17,7 +17,7 @@ object dmServer: TdmServer
     Top = 8
   end
   object FDDriver: TFDPhysPgDriverLink
-    VendorLib = 'C:\SmartSolutions\SmartManager\1.00.0\DLL\libpq.dll'
+    VendorLib = 'C:\Users\Adm\Documents\GitHub\Smart-Clinic\DLL\libpq.dll'
     Left = 88
     Top = 8
   end
