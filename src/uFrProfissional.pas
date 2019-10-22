@@ -47,26 +47,9 @@ var
 TabSheet :TTabSheet;
 begin
    FreeAndNil(frmProfissional);
-   TabSheet := frmMain.pgcPrincipal.ActivePage;
-
-   if Assigned(TabSheet) then
-begin
-TabSheet.Parent := nil;
-TabSheet.PageControl := nil;
-
-
-FreeAndNil(TabSheet);
-end;
-
-
-  // frmMain.pgcPrincipal.ActivePage.Free;
+  frmMain.pgcPrincipal.ActivePage.Free;
   inherited;
-  //TabSheet := frmMain.pgcPrincipal.ActivePage;
-  // frmMain.pgcPrincipal.ActivePage.PageControl.Pages[1].Destroy;
- //  FreeAndNil(frmProfissional);
-  // frmMain.pgcPrincipal.ActivePage.Free;
-  //frmMain.pgcPrincipal.ActivePage.Destroy;
-  //frmMain.pgcPrincipal.ActivePageIndex := 0;
+
 end;
 
 procedure TfrmProfissional.Button1Click(Sender: TObject);

@@ -156,7 +156,6 @@ begin
       if Pages[index].Caption = FCaption  then
         begin //se ja existe a aba irá sair do método
           pageControl.ActivePageIndex := Index;
-          pageControl.ActivePage      := tabSheet;
           Exit;
         end;
 
